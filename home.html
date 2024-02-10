@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-IN" dir="ltr">
+
+<head>
+    <title> Be my valentine <3 </title>
+    <meta charset="utf-8">
+    <meta name="author" content="Piu" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="ask" class="container">
+        <div class="warning">don't you dare say no*</div>
+        <h1 class="header_text">Will you spend this Saraswati pujo/Valentine's Day with me?</h1>
+        <div class="pic_container">
+            <img src="imgs/pic2.jpg" alt="Comp1">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <div id="ans" class="container2">
+        <div class="warning">bring flowers!*</div>
+        <h1 class="header_text">Great! See you on 14th Feb ;)</h1>
+    </div>
+
+    <script>
+        function nextPage() {
+            document.getElementById('ans').style.display = 'block';
+            document.getElementById('ask').style.display = 'none';
+            document.body.classList.add('ans');
+        }
+    
+        function moveButton() {
+            var button = document.getElementById('noButton');
+            var x = Math.random() * (window.innerWidth - button.offsetWidth);
+            var y = Math.random() * (window.innerHeight - button.offsetHeight);
+    
+            button.style.transition = "top 0.5s, left 0.5s";
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+    
+            setTimeout(() => {
+                button.style.transition = "";
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
